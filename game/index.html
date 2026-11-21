@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twin Isles: Spot the Difference</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="game-canvas" width="1280" height="720"></canvas>
+
+  <header id="hud">
+    <div class="hud-group">
+      <span id="hud-level" class="hud-level">Harbour Morning</span>
+    </div>
+    <div class="hud-group hud-center">
+      <span id="hud-found" class="hud-found">Found 0 of 6</span>
+      <div class="timer-wrap">
+        <div id="hud-time-bar" class="timer-bar"><div id="hud-time-fill" class="timer-fill"></div></div>
+        <span id="hud-time" class="hud-time">3:00</span>
+      </div>
+    </div>
+    <div class="hud-group hud-right">
+      <span id="hud-score" class="hud-score">Score 0</span>
+      <button id="hint-btn" type="button" class="hud-btn">Hint · 3</button>
+      <button id="mute-btn" type="button" class="hud-btn">Sound: On</button>
+      <button id="pause-btn" type="button" class="hud-btn">Pause</button>
+    </div>
+  </header>
+
+  <div id="found-chips"></div>
+
+  <section id="screen-title" class="screen">
+    <div class="card">
+      <h1>Twin Isles</h1>
+      <p class="tagline">Spot the Difference</p>
+      <p class="howto">Two pictures, a handful of sneaky changes. Click a difference in
+        either picture to ring it. Wrong clicks cost 5 seconds. Find them all
+        before the timer runs out!</p>
+      <div id="level-grid" class="level-grid"></div>
+      <p class="totals"><span id="total-score">Total best score: 0</span> · <span id="total-stars">Stars: 0 / 15</span></p>
+    </div>
+  </section>
+
+  <section id="screen-pause" class="screen hidden">
+    <div class="card small">
+      <h2>Paused</h2>
+      <p>Take a breath. The timer is stopped.</p>
+      <button id="resume-btn" type="button" class="btn primary">Resume</button>
+      <button id="restart-btn" type="button" class="btn">Restart level</button>
+      <button id="quit-btn" type="button" class="btn">Level select</button>
+    </div>
+  </section>
+
+  <section id="screen-complete" class="screen hidden">
+    <div class="card small">
+      <h2 id="complete-title">Level complete!</h2>
+      <p id="complete-stars" class="stars">★★★</p>
+      <p id="complete-finds" class="breakdown-line">Finds: 0</p>
+      <p id="complete-combo" class="breakdown-line">Combo bonus: 0</p>
+      <p id="complete-time" class="breakdown-line">Time bonus: 0</p>
+      <p id="complete-total" class="breakdown-total">Total: 0</p>
+      <button id="next-btn" type="button" class="btn primary">Next level</button>
+      <button id="replay-btn" type="button" class="btn">Replay level</button>
+      <button id="complete-menu-btn" type="button" class="btn">Level select</button>
+    </div>
+  </section>
+
+  <section id="screen-failed" class="screen hidden">
+    <div class="card small">
+      <h2>Time&rsquo;s up!</h2>
+      <p id="failed-found">You found 0 of 6 differences.</p>
+      <p>Have another look &mdash; the differences are all fair, I promise.</p>
+      <button id="retry-btn" type="button" class="btn primary">Try again</button>
+      <button id="failed-menu-btn" type="button" class="btn">Level select</button>
+    </div>
+  </section>
+
+  <section id="screen-game-complete" class="screen hidden">
+    <div class="card small">
+      <h2>All five isles explored!</h2>
+      <p>You spotted every difference across Twin Isles.</p>
+      <p id="final-score" class="breakdown-total">Total score: 0</p>
+      <p id="final-stars" class="breakdown-line">Stars: 0 / 15</p>
+      <button id="again-btn" type="button" class="btn primary">Play again</button>
+      <button id="final-menu-btn" type="button" class="btn">Level select</button>
+    </div>
+  </section>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
